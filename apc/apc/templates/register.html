@@ -1,0 +1,45 @@
+{% extends 'cart/basic.html' %}
+{% block title%} Register{% endblock %}
+{% block body %}
+
+<body style="background-color:powderblue;">
+
+
+<div class="container">
+    <div class="col my-4">
+        <h1 style="margin-left:360px;margin-top:20px">Registration here</h1>
+        <div class="my-4">
+            <ul class="list-group" id="items">
+            </ul>
+
+
+
+        </div>
+    </div>
+    <div style="margin-left:230px;margin-top:20px" class="col my-4">
+        <form method="post" action="register/">{% csrf_token %}
+            <div>
+                <div class="col-md-6">
+                    <label style=" margin-left:20px" for="name"><b>Name</b></label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                </div>
+                <div style="margin-top:20px" class="col-md-6">
+                    <label style=" margin-left:20px" for="username" ><b>Username</b></label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="UserName">
+                </div>
+                <div style="margin-top:20px" class="form-group col-md-6">
+                    <label style=" margin-left:20px" for="pass"><b>Password</b></label>
+                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+                </div>
+                <div style="margin-top:20px" class="col-md-6">
+                    <label for="Phone"><b>Phone Number</b></label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+            </div>
+            </div>
+            <p>
+            <a href="http://127.0.0.1:8000/"><button style="margin-left:230px;margin-top:20px" type="button"  class="btn btn-primary">Register</button></a>
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

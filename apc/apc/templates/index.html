@@ -1,0 +1,51 @@
+{% extends 'cart/basic.html' %}
+{% block title%} Home - Apna HUB{% endblock %}
+{% block body %}
+{% load static %}
+
+<!-- this is for bckground image and colour -->
+<body background="{% static 'C:\Users\Dell\PycharmProjects\ApnaCart\apc\cart\static\cart\product.jpg' %}"
+style="background-color:powderblue;">
+
+
+
+<div class="container">
+<div class="col my-4">
+        <h1 style=" margin-left:300px;margin-top:80px">WELCOME TO APNA HUB</h1>
+    <h4 style=" margin-left:450px;margin-top:25px">Make Life Easy</h4>
+
+    </div>
+    <div class="col my-4">
+        <h1 style=" margin-left:470px;margin-top:70px">LOGIN</h1>
+        <form method="post"  >{% csrf_token %}
+            <input type="hidden" name="itemsJson" id="itemsJson">
+            <div>
+                <div style=" margin-left:250px;margin-top:50px" class="form-group col-md-6">
+                    <label style=" margin-left:20px" for="username" ><b>USERNAME</b></label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="UserName">
+                </div>
+                <div style=" margin-left:250px;margin-top:20px" class="form-group col-md-6">
+                    <label style=" margin-left:20px" for="pass"><b>Password</b></label>
+                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+                </div>
+            </div>
+
+            <a href="http://127.0.0.1:8000/cart/"><button style=" margin-left:480px;margin-top:20px" type="button" class="btn btn-primary"><b>Log In</b></button>
+        </form>
+
+
+        <p
+     style="margin-left:340px;margin-top:30px">If you have not registered yet!! Click here::
+    <a href='http://127.0.0.1:8000/register/' >Sign Up</a><p/>
+
+    </div>
+</div>
+
+{% endblock %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
