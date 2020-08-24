@@ -24,6 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls')),
     path('blog/', include('blog.urls')),
-    path('', views.index, name="index"),
-    path('register/', views.register, name="register")
+    path('', include('cart.urls'))
+
+    # Below 2 paths we deleted so that we can neglect login and register page which is in apc-templates
+
+    # path('', views.index, name="index"),
+    # path('register/', views.register, name="register")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
